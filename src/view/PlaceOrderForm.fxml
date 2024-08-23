@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="pageContext" prefHeight="1080.0" prefWidth="1525.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+   <children>
+      <ImageView fitHeight="945.0" fitWidth="1525.0" pickOnBounds="true">
+         <image>
+            <Image url="@../asset/loginContextBG.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="485.0" fitWidth="1461.0" layoutX="31.0" layoutY="429.0" pickOnBounds="true">
+         <image>
+            <Image url="@../asset/BG7.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblCart" cache="true" layoutX="28.0" layoutY="380.0" prefHeight="537.0" prefWidth="1467.0" style="-fx-background-color: Transparent;" stylesheets="@../style/tableStyle.css">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="637.66672706604" text="Item Code" />
+          <TableColumn fx:id="colDesc" prefWidth="828.3333129882812" text="Description" />
+            <TableColumn fx:id="colQty" prefWidth="637.66672706604" text="Quantity" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="828.3333129882812" text="Unit Price" />
+            <TableColumn fx:id="colDiscount" prefWidth="244.0" text="Discount" />
+            <TableColumn fx:id="colPrice" prefWidth="243.0" text="Price" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <AnchorPane layoutY="945.0" prefHeight="135.0" prefWidth="1525.0" rotate="180.0" style="-fx-background-color: #015a38;">
+         <children>
+            <Label fx:id="lblDate" layoutX="922.0" layoutY="67.0" prefHeight="56.0" prefWidth="531.0" rotate="180.0" text="Wednesday, 15 September 2020" textFill="WHITE">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="1273.0" layoutY="10.0" prefHeight="56.0" prefWidth="180.0" rotate="180.0" text="10 : 59 : 35 PM" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnPlaceOrder" buttonType="RAISED" layoutX="104.0" layoutY="36.0" onAction="#placeOrderOnAction" prefHeight="58.0" prefWidth="195.0" ripplerFill="WHITE" rotate="180.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Place Order" textFill="#015a38">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblItemCount" layoutX="596.0" layoutY="42.0" prefHeight="56.0" prefWidth="209.0" rotate="180.0" text="Item Count : 13" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="1165.0" layoutY="17.0" prefHeight="42.0" prefWidth="174.0" text="Total" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="1165.0" layoutY="51.0" prefHeight="73.0" prefWidth="352.0" text="Rs. 34250.00" textFill="WHITE">
+         <font>
+            <Font size="53.0" />
+         </font>
+      </Label>
+      <Label layoutX="1165.0" layoutY="134.0" prefHeight="42.0" prefWidth="109.0" text="Order Id" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="1165.0" layoutY="158.0" prefHeight="73.0" prefWidth="352.0" text="O-0021" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCustId" layoutX="353.0" layoutY="93.0" prefHeight="42.0" prefWidth="215.0" promptText="Customer Id" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCustAddress" layoutX="353.0" layoutY="207.0" prefHeight="42.0" prefWidth="215.0" promptText="Address" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCustName" layoutX="353.0" layoutY="150.0" prefHeight="42.0" prefWidth="215.0" promptText="Name" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemCode" layoutX="857.0" layoutY="90.0" prefHeight="42.0" prefWidth="215.0" promptText="Item Code" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUnitPrice" layoutX="857.0" layoutY="203.0" prefHeight="42.0" prefWidth="215.0" promptText="Unit Price" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemDesc" layoutX="857.0" layoutY="146.0" prefHeight="42.0" prefWidth="215.0" promptText="Description" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQtyOnHand" layoutX="857.0" layoutY="261.0" prefHeight="42.0" prefWidth="215.0" promptText="Quantity on Hand" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQty" layoutX="1165.0" layoutY="234.0" prefHeight="42.0" prefWidth="247.0" promptText="Quantity" style="-fx-background-color: white;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="1120.0" layoutY="311.0" onAction="#clearItemOnAction" prefHeight="47.0" prefWidth="148.0" ripplerFill="#479045" style="-fx-background-color: #3E8D16; -fx-background-radius: 30;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="1281.0" layoutY="312.0" onAction="#addToCartOnAction" prefHeight="47.0" prefWidth="180.0" ripplerFill="#479045" style="-fx-background-color: #3E8D16; -fx-background-radius: 30;" text="Add to Cart" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField layoutX="104.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: white;" />
+      <JFXComboBox fx:id="cmbCustomer" layoutX="104.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" />
+      <JFXTextField layoutX="612.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: white;" />
+      <JFXComboBox fx:id="cmbItem" layoutX="612.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" />
+   </children>
+</AnchorPane>
